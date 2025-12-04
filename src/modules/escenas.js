@@ -1,7 +1,19 @@
+/**
+ * @module escenas
+ */
+
 import { rarezaAleatoria, descuentoAleatorio, EUR } from '../utils/utils.js';
 import { aplicarDescuentoPorRareza, actualizarInventario } from "./mercado.js";
-import { batalla } from "./batalla.js";
+import { batalla } from "./Batalla.js";
 
+/**
+ * Muestra la información del jugador en la escena, incluyendo su imagen, estadísticas e inventario.
+ * 
+ * @function mostrarJugador
+ * @param {HTMLElement} escena - El elemento HTML donde se renderizará la escena del jugador.
+ * @param {Jugador} jugador - La instancia del jugador con sus datos.
+ * @returns {void}
+ */
 export function mostrarJugador(escena, jugador) {
     const contenedorEscena1 = document.createElement("div");
     contenedorEscena1.classList.add("scene-1-container");
@@ -40,6 +52,14 @@ export function mostrarJugador(escena, jugador) {
     mostrarInventario(escena, jugador);
 }
 
+/**
+ * Muestra el mercado en la escena, aplicando descuentos aleatorios a una rareza seleccionada, y permite al jugador añadir productos a su inventario.
+ * 
+ * @function mostrarMercado
+ * @param {HTMLElement} escena - El elemento HTML donde se renderizará la escena del mercado.
+ * @param {Jugador} jugador - La instancia del jugador con sus datos.
+ * @returns {void}
+ */
 export function mostrarMercado(escena, jugador) {
     const contenedorEscena2 = document.createElement("div");
     contenedorEscena2.classList.add("scene-2-container");
@@ -144,6 +164,15 @@ export function mostrarMercado(escena, jugador) {
     escena.appendChild(contenedorEscena2);
 }
 
+/**
+ * Muestra la lista de enemigos en la escena, junto con el inventario del jugador.
+ * 
+ * @function mostrarEnemigos
+ * @param {HTMLElement} escena - El elemento HTML donde se renderizará la escena de enemigos.
+ * @param {Enemigo[]} listaEnemigos - Array de enemigos a mostrar.
+ * @param {Jugador} jugador - La instancia del jugador con sus datos.
+ * @returns {void}
+ */
 export function mostrarEnemigos(escena, listaEnemigos, jugador) {
     const contenedorEscena4 = document.createElement("div");
     contenedorEscena4.classList.add("scene-4-container");
@@ -190,6 +219,15 @@ export function mostrarEnemigos(escena, listaEnemigos, jugador) {
     mostrarInventario(escena, jugador);
 }
 
+/**
+ * Inicia una pelea contra un enemigo aleatorio, muestra el resultado de la batalla y el inventario del jugador.
+ * 
+ * @function pelear
+ * @param {HTMLElement} escena - El elemento HTML donde se renderizará la escena de la pelea.
+ * @param {Enemigo[]} listaEnemigos - Array de enemigos disponibles.
+ * @param {Jugador} jugador - La instancia del jugador con sus datos.
+ * @returns {void}
+ */
 export function pelear(escena, listaEnemigos, jugador) {
     const contenedorEscena5 = document.createElement("div");
     contenedorEscena5.classList.add("scene-5-container");
@@ -231,6 +269,14 @@ export function pelear(escena, listaEnemigos, jugador) {
     mostrarInventario(escena, jugador);
 }
 
+/**
+ * Muestra el inventario del jugador en la escena, creando casillas para cada ítem y placeholders para las vacías.
+ * 
+ * @function mostrarInventario
+ * @param {HTMLElement} escena - El elemento HTML donde se renderizará el inventario.
+ * @param {Jugador} jugador - La instancia del jugador con su inventario.
+ * @returns {void}
+ */
 export function mostrarInventario(escena, jugador) {
     const inventario = document.createElement("div");
     inventario.id = "inventory-container";
