@@ -27,7 +27,7 @@ html, body {
     font-family: 'Cinzel', 'Averia Serif Libre', serif;
     color: var(--color-texto);
 
-    background: url('imagenes/f.jpg') no-repeat center/cover;
+    background: url('../imagenes/f.jpg') no-repeat center/cover;
     overflow-x: hidden;  
 }
 

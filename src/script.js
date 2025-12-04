@@ -1,6 +1,6 @@
 import { Jugador } from "./modules/jugador.js";
 import { Enemigo, Jefe } from "./modules/enemigos.js";  
-import { calcularNivel } from "./modules/batalla.js";
+import { calcularNivel } from "./modules/Batalla.js";
 import { mostrarMercado, mostrarJugador, mostrarEnemigos, pelear, mostrarInventario } from "./modules/escenas.js";
 
 /**
